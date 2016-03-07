@@ -1,5 +1,5 @@
 {
-    "name": "abbyLibs/phpXQL",
+    "name": "abby-libs/php-xql",
     "type": "library",
     "description": "database like retriver on XML/HTML by XPATH for PHP 5.3+",
     "keywords": ["xpath","dom"],
