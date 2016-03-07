@@ -6,9 +6,9 @@ namespace abbyLibs;
 		private $ddDoc;
 		public function __construct($strUrl){
 			$str = file_get_contents($strUrl);
-			$this->ddDoc = new DOMDocument();
+			$this->ddDoc = new \DOMDocument();
 			$this->ddDoc->loadHTML($str);
-			$this->xpath = new DOMXpath($this->ddDoc);
+			$this->xpath = new \DOMXpath($this->ddDoc);
 		}
 
 		public function cell($strQuery){
@@ -23,7 +23,7 @@ namespace abbyLibs;
 			$strQuery = str_replace("?","$intLower <= position() and position() <= $intUpper",$strQuery);
 			$elements = $this->xpath->query($strQuery);
 			foreach($elements as $element){
-				$return[] = $element;
+				$return[] = $element->nodeValue;
 			}
 			return $return;
 		}
@@ -34,7 +34,7 @@ namespace abbyLibs;
 
 			$elements = $this->xpath->query($strQuery);
 			foreach($elements as $element){
-				$return[] = $element;
+				$return[] = $element->nodeValue;
 			}
 
 			return array_chunk($return, sizeof($arrRangeTR));
