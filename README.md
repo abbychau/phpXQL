@@ -16,3 +16,9 @@ Usage:
   $string = $objXQL->row($path);
   echo $string;
 ```
+
+Packgist: `https://packagist.org/packages/abby-libs/php-xql`
+
+Composer: `composer require abby-libs/php-xql`
+
+Apache2.0 license. Welcome to fork and use at any cause. I would be happy to hear from any words!
